@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www":{"guestpath":"/var/www","hostpath":"/Users/Johna/Desktop/gui-vagrant/Burger_Bar/website","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Johna/Desktop/gui-vagrant/Burger_Bar","disabled":false}}}
