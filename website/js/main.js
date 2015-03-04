@@ -26,6 +26,8 @@ var subTotal = 0;
 var total = 0;
 var tax = 0;
 
+
+
 function Meat(name, price){
     this.price = price;
     this.name = name;
@@ -57,7 +59,122 @@ function Sides(name, price){
     this.name = name;
 }
 
-var url = "./api/index.php/getMeats";
+
+
+/*GETTING THE VALUES FROM THE FORM */
+    
+function addItem(type, name, value){
+console.log("TYPE: " +type);
+console.log("NAME: " +name);
+console.log("VALUE: "+value);
+	if(type == "1"){
+		document.getElementById("burgerMeat").innerHTML = value;
+	} else if(type == "2"){
+		document.getElementById("burgerBun").innerHTML = value;
+	}
+	if(type == "3"){
+		document.getElementById("burgerCheese").innerHTML = value;
+	}
+	if(type == "6"){
+		document.getElementById("burgerSide").innerHTML = value;
+	}
+	
+	      
+return;
+	/*
+       // tax = Math.round((subTotal*0.08)*100)/100;
+         //   total = Math.round((tax + subTotal)*100)/100;
+           // document.getElementById("totalPrice").innerHTML = "Total Price: $" + total;
+            //document.getElementById("tax").innerHTML = "Tax(8%): $" + tax;
+            //document.getElementById("subtotal").innerHTML = "SubTotal: $" +subTotal;
+};*/
+
+}
+    
+
+
+
+
+var Request = new XMLHttpRequest();
+Request.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);     
+    var textin = JSON.parse(this.responseText);
+	myFunction(textin);
+	console.log(textin);
+	console.log(JSON.stringify(textin));
+	
+  }
+}
+Request.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/getMenu', true);
+Request.send(JSON.stringify(document.body));
+
+function myFunction(arr) {
+    var patties = "<select class='menu' name='listOfMeat' onchange='addItem(this.id, this.name, this.value)' id='1'><option name='meat' id=0 >Meat</option>";
+    var cheese ="<select class='menu'  name = 'cheeses' id ='3' onchange='addItem(this.id, this.name, this.value)'><option name='cheeseDrop'>Cheese</option>";
+    var toppings="";
+    var sideChoice="<select class='menu'  onchange='addItem(this.id, this.name, this.value)' id='6'><option name='sideDrop' >Sides</option>";
+    var breads="<select class='menu' onchange='addItem(this.id, this.name, this.value)'  id='2'><option name='bunDrop' >Bun</option>";
+    var sauces="";
+    var i;
+    var tempItemID = 1;
+    
+    for(i = 0; i < arr.length; i++) {
+    	var product = JSON.stringify(arr[i]["name"]);
+    	product = product.substr(1,product.length-2);
+    	
+    	
+    	
+    	
+    	var id = JSON.stringify(arr[i]["id"]);
+    	
+    	
+    	if (id == 1) {
+    		var temp = new Meat(5, product);
+    		patties += '<option name="meat" >'+product+'</option>';       
+    		
+    	} if (id == 2) {
+    		var temp = new Buns(5, product);
+    		breads += '<option name="bun" >'+product+'</option>';       
+    		
+    	} if (id == 3) {
+    		var temp = new Cheese(5, product);
+    		cheese += '<option name="cheese">'+product+'</option>';       
+    		
+    	} if (id == 4) {
+    		var temp = new Topping(5, product);
+    		toppings += '<input type="checkbox" name="topping">'+product+'</input><br>';       
+    		
+    	} if (id == 5) {
+    		var temp = new Sauce(5, product);
+    		sauces += '<input type="checkbox" name="sauce" >'+product+'</input><br>';       
+    		
+    	} if (id == 6) {
+    		var temp = new Sides(5, product);
+    		sideChoice += '<option name="side">'+product+'</option>';       
+    		
+    	}	
+    	
+    	tempItemID +=1;
+    }
+    
+    
+    document.getElementById("meats").innerHTML = patties+"</form>";
+    document.getElementById("cheeses").innerHTML = cheese+"</form>";
+    document.getElementById("buns").innerHTML = breads+"</form>";
+    document.getElementById("toppings").innerHTML = toppings+"</form>";
+    document.getElementById("sides").innerHTML = sideChoice+"</form>";
+    document.getElementById("sauces").innerHTML = sauces+"</form>";
+    
+    
+
+}
+
+
+
+/*var url = "./api/index.php/getMeats";
 var request = new XMLHttpRequest();
 request.open('GET', url, false);
 request.send();
@@ -378,7 +495,7 @@ function getPreviousOrder(){
             //put the quantity on the order paper
         }
     }
-}
+}*/
 
 
 

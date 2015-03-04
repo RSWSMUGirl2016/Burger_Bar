@@ -11,10 +11,11 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/Registration.js"></script>
-        <script type="text/javascript" src="js/login.js"></script>
-        
-
+        <script type="text/javascript" src="js/login.js"></script>    
     </head>
+    
+    
+    
     <body>
         <nav>
             <img id = "logo" src="img/BurgerLogo.png" alt="Burger Bar Logo" title="Burger Bar" width=100px>
@@ -73,25 +74,50 @@
             <h2>Welcome!</h2>
             <a href="index.html" id="signOut">Sign Out</a>
         </div>
-        <div id = "MenuItems">MENU
+        <div id = "MenuItems"><h2>MENU</h2>
             <hr>
-        <div id = "meats">
-        </div>
-            <hr>
-        <div id = "buns">
-        </div>
-            <hr>
-        <div id = "cheeses">
-        </div>
-            <hr>
-        <div id = "toppings">
-        </div>
-            <hr>
-        <div id = "sauces">
-        </div>
-            <hr>
-        <div id = "sides">
-        </div>
+        <h2>The Essentials</h2>
+        	<table width=70% align="center" border-spacing=>
+        		<td>
+        			<div id = "meats"  class="menuOption" >
+        			</div>
+        		</td>
+         
+         		<td>
+        			<div id = "buns"  class="menuOption" >
+        			</div>
+        		</td>
+        		<td>  
+        			<div id = "cheeses"  class="menuOption">
+        			</div>
+        		</td>
+        </table>
+        
+        <h2>The Flourishes</h2>
+         <table align="center">
+         <tr>
+         	<td><h3>Toppings</h3></td>
+         	<td><h3>Sauces</h3></td>
+         </tr>
+         <tr>
+         	<td>
+        		<div id = "toppings" class="menuOption" align="left">
+        		</div>
+        	</td>
+            <td>
+        		<div id = "sauces" class="menuOption" align="left">
+        		</div>
+        	</td>
+        </tr>
+        </table>
+        
+        <h2> The Final Touch</h2>
+        <table align="center" style="padding-bottom:30px;">
+        <td>
+        	<div id = "sides" class="menuOption">
+        	</div>
+        </td>
+        </table>
         </div>    
         
         <div id = "OrderList">
