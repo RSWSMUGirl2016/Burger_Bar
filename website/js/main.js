@@ -15,10 +15,6 @@
 //document.getElementById("signInEmail").removeAttribute("required");
 //document.getElementById("signInPass").removeAttribute("required");
 
-
-
-
-
 var meatPrices = new Array();
 var bunPrices = new Array();
 var cheesePrices = new Array();
@@ -383,4 +379,6 @@ function getPreviousOrder(){
         }
     }
 }
+
+
 
