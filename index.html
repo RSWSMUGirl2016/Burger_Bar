@@ -2,99 +2,101 @@
 <html>
     <head>
         <title>Burger Bar-The Best Burgers in Texas</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<meta http-equiv="cleartype" content="on">
+
+		<link rel="shortcut icon" href="/favicon.ico">
+
+		<!-- Responsive and mobile friendly stuff -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/html5reset.css" media="all">
+		<link rel="stylesheet" href="css/col.css" media="all">
+		<link rel="stylesheet" href="css/2cols.css" media="all">
+		<link rel="stylesheet" href="css/3cols.css" media="all">
+		<link rel="stylesheet" href="css/4cols.css" media="all">
+		<link rel="stylesheet" href="css/5cols.css" media="all">
+		<link rel="stylesheet" href="css/6cols.css" media="all">
+		<link rel="stylesheet" href="css/7cols.css" media="all">
+		<link rel="stylesheet" href="css/8cols.css" media="all">
+		<link rel="stylesheet" href="css/9cols.css" media="all">
+		<link rel="stylesheet" href="css/10cols.css" media="all">
+		<link rel="stylesheet" href="css/11cols.css" media="all">
+		<link rel="stylesheet" href="css/12cols.css" media="all">
+
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+		
+		<style type="text/css">
+			
+			body {
+					background-image : url("img/background.jpg");
+					background-size: 1400px 929px;
+					color : white;
+					font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+				 }
+			img.displayed{
+							display: block;
+							padding-top: 50px;
+							padding-left: 145px;
+						 }
+			h1 {
+					text-align: center;
+					font-size:2.2em;
+			   }
+			p  {
+					padding-top: 50px;
+					padding-bottom: 50px;
+			   }
+		</style>
 
-    </head>
+	</head>
     <body>
         <header>
-            <img id = "logo" src="img/BurgerLogo.png" alt="Burger Bar Logo" title="Burger Bar">
-            <h1>Burger Bar</h1>
-            <div id = "signIn" class="rightHeader">
-            <form id="signInArea" name = "signInArea" method = "post">
-                <input id="signInEmail" type="email" name="email" placeholder="Email" title="Must be a valid email address." required>
-                <input id="signInPass" type="password" name="password" placeholder="Password" title="Must be at least 8 characters" required pattern=".{8,}">
-                <input class="button" type="submit" value="Register" id="register">
-                <input class="button" type="submit" value="Sign In" id="signInBttn">
-            </form>
-        </div>
+		
+			<div id="header" class="section group"> 
+				<div class="col span_1_of_3"></div>
+				<div class="col span_1_of_3">
+					<p align="center" style="font-size:70px; font-weight:100;">Burger Bar</p>
+				</div>
+			</div>
+			
+			<div id="signIn" class="section group">
+				<div class="col span_1_of_3"></div>
+				<div class="col span_1_of_3" class="col span_1_of_3"> 
+					<form id="signInArea" name = "signInArea" method = "post">							
+						<input id="signInEmail" type="email" name="email" placeholder="Email" title="Must be a valid email address." required>
+						<input id="signInPass" type="password" name="password" placeholder="Password" title="Must be at least 8 characters" required pattern=".{8,}">
+						<input class="button" type="submit" value="Sign In" id="signInBttn">
+					</form>
+				</div>
+			</div>
+			
+			<div><p><br><br></p></div>
+			
+			<div id="Menu and Order" class="section">
+				<div class="col span_1_of_3"></div>
+				<div class="col span_1_of_3">
+					<h1 align="center"><a href="order.html">Order</a></h1>
+				</div>
+			</div>
+			
+			<div><p><br><br><br></p></div>
+			
+			<div id="registration" class="section group">
+				<div class="col span_1_of_3"></div>
+				<div class="col span_1_of_3" align="center"> 
+					<p align="center" style="font-size:30px; padding-bottom:25px;"> Don't have an account yet? </p>
+					<input class="button" type="submit" value="Register" id="register" align="center" href="Registration.html">
+				</div>
+			</div>		
         </header>    
-            
-        <div id = "signedIn" class="rightHeader">
-            <h2>Welcome!</h2>
-            <a href="index.html" id="signOut">Sign Out</a>
-        </div>
-        <div id = "MenuItems">MENU
-            <hr>
-        <div id = "meats">
-        </div>
-            <hr>
-        <div id = "buns">
-        </div>
-            <hr>
-        <div id = "cheeses">
-        </div>
-            <hr>
-        <div id = "toppings">
-        </div>
-            <hr>
-        <div id = "sauces">
-        </div>
-            <hr>
-        <div id = "sides">
-        </div>
-        </div>    
-        
-        <div id = "OrderList">
-        <h2>Orders</h2>
-        <hr>
-            <div id = "addedOrders"></div>
-                <h4 id = "burgerMeat"></h4>
-                <h4 id = "burgerBun"></h4>
-                <h4 id = "burgerCheese"></h4>
-                <h4 id = "burgerToppings"></h4>
-                <h4 id = "burgerSauces"></h4>
-                <h4 id = "burgerSide"></h4>
-                <hr>
-                <h2 id = "subtotal"></h2>
-                <h2 id = "tax"></h2>
-                <h3 id = "totalPrice"></h3>
-                <div id="button_div"> 
-                    <a href="#loginScreen" class="pay_button">PayNow</a> 
-                    <button class="button" id="orderPrevious" type="button">Order Previous</button>
-                </div> 
-        </div>
-        
-        
-        <div id="loginScreen"> 
-            <a href="#" class="cancel">&times;</a> 
-            <form class="userForm" method="POST">
-                <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
-                <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
-                <input class="userInput" type="email" name="email"  placeholder="Email"><br>
-                <input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
-                <select class="userInput" name = "ccprovider">
-                    <option selected="selected" id="defaultProvider">Credit Card</option>
-                    <option value="Mastercard">Master Card</option>
-                    <option value="American Express">American Express</option>
-                    <option value="Visa">Visa</option>
-                </select><br>
-                <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
-                <input class="userInput" type="submit" value="Order">
-            </form>
-        </div> 
-
-        <div id="cover" > 
-        </div> 
-
-        
-
-
-        <script src="js/main.js"></script>
     </body>
 </html>
