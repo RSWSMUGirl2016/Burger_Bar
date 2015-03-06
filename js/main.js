@@ -1,3 +1,117 @@
+function getPreviousOrder(){
+    var url = "./api/index.php/getLastOrder/";
+    var request = new XMLHttpRequest();
+    request.open('GET', url, false);
+    request.send();
+    if(request.status === 200){
+        var json = JSON.parse(request.responseText);
+        for(var key in json){
+            for(var i = 0; i < json[key].components.length; i++){
+                //for(var j = 0; j < meatPrices.length; j++)
+            }
+            var q = json[key].quantity;
+            //put the quantity on the order paper
+        }
+    }
+};
+
+
+function retrieveOrder() //get
+{
+   var Request = new XMLHttpRequest();
+
+Request.open('GET', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders/1');
+
+Request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+
+Request.send(JSON.stringify(body));
+};
+
+function listAllOrders() //get
+{
+var Request = new XMLHttpRequest();
+
+Request.open('GET', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
+
+Request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+
+Request.send(JSON.stringify(body));
+};
+
+function makeASammich() //post
+{
+    var Request = new XMLHttpRequest();
+
+Request.open('POST', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
+
+Request.setRequestHeader('Content-Type', 'application/json');
+
+Request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+ //body should be form data - EDIT ME
+ var title='Order title';
+ var meat=document.getElementById('type').value;
+ var bun=document.getElementById('bun').value;
+ var cheese=document.getElementById('cheese').value;
+ var toppings = document.getElementById('toppings').value;
+ var side= document.getElementById('side').value;
+var body = {
+  'title': 'This is an order for world domination.',
+  'meat': meat,
+  'bun': bun,
+  'cheese': cheese,
+  'toppings': toppings,
+  'side': side
+};
+
+Request.send(JSON.stringify(body));
+};
+
+function eatTheSammich() //delete
+{
+    var Request = new XMLHttpRequest();
+
+Request.open('DELETE', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders/{:id}');
+
+Request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+
+Request.send(JSON.stringify(body));
+};
+
+function addToSammich() //patch
+{
+ //TODO: implement this later or something
+};
+
+function changeTheSammich() //put
+{
+  //TODO: replace the order with a different order. NOT delete
+};
+
+
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -367,115 +481,4 @@ function addPrice(){
     document.getElementById("subtotal").innerHTML = "SubTotal: $" +subTotal;
 }
 */
-function getPreviousOrder(){
-    var url = "./api/index.php/getLastOrder/";
-    var request = new XMLHttpRequest();
-    request.open('GET', url, false);
-    request.send();
-    if(request.status === 200){
-        var json = JSON.parse(request.responseText);
-        for(var key in json){
-            for(var i = 0; i < json[key].components.length; i++){
-                //for(var j = 0; j < meatPrices.length; j++)
-            }
-            var q = json[key].quantity;
-            //put the quantity on the order paper
-        }
-    }
-};
 
-
-function retrieveOrder() //get
-{
-   var Request = new XMLHttpRequest();
-
-Request.open('GET', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders/1');
-
-Request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-  }
-};
-
-Request.send(JSON.stringify(body));
-}
-
-function listAllOrders() //get
-{
-var Request = new XMLHttpRequest();
-
-Request.open('GET', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
-
-Request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-  }
-};
-
-Request.send(JSON.stringify(body));
-};
-
-function makeASammich() //post
-{
-    var Request = new XMLHttpRequest();
-
-Request.open('POST', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
-
-Request.setRequestHeader('Content-Type', 'application/json');
-
-Request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-  }
-};
- //body should be form data - EDIT ME
- var title='Order title';
- var meat=document.getElementById('type').value;
- var bun=document.getElementById('bun').value;
- var cheese=document.getElementById('cheese').value;
- var toppings = document.getElementById('toppings').value;
- var side= document.getElementById('side').value;
-var body = {
-  'title': 'This is an order for world domination.',
-  'meat': meat,
-  'bun': bun,
-  'cheese': cheese,
-  'toppings': toppings,
-  'side': side
-};
-
-Request.send(JSON.stringify(body));
-}
-
-function eatTheSammich() //delete
-{
-    var Request = new XMLHttpRequest();
-
-Request.open('DELETE', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders/{:id}');
-
-Request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-  }
-};
-
-Request.send(JSON.stringify(body));
-
-
-function addToSammich() //patch
-{
- //TODO: implement this later or something
-};
-
-function changeTheSammich() //put
-{
-  //TODO: replace the order with a different order. NOT delete
-};
