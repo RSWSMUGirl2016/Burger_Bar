@@ -173,8 +173,8 @@ function myFunction(arr) {
 }
 
 
-
-/*var url = "./api/index.php/getMeats";
+/*
+var url = "./api/index.php/getMeats";
 var request = new XMLHttpRequest();
 request.open('GET', url, false);
 request.send();
@@ -495,7 +495,5 @@ function getPreviousOrder(){
             //put the quantity on the order paper
         }
     }
-}*/
-
-
-
+}
+*/
