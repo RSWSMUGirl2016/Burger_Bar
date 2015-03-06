@@ -75,6 +75,14 @@ $app->get('/getCheeses', function () {
 		"price": 0.35
 	},
 	{
+		"name": "Provolone",
+		"price": 0.35
+	},
+	{
+		"name": "Parmesan",
+		"price": 0.35
+	},
+	{
 		"name": "Swiss",
 		"price": 0.35
 	}
