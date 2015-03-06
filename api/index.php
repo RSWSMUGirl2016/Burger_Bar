@@ -1,4 +1,4 @@
-<?php
+\<?php
 require 'vendor/autoload.php';
 $app = new \Slim\Slim();
 $app->get('/hello/:name', function ($name) {
@@ -231,6 +231,7 @@ $app->post('/loginUser', function () {
     $email = $_POST['email'];
     $password = $_POST['password'];
     //$passwordCheck = mysqli->query("SELECT password ")
+    //commit 
     echo json_encode($dummyJSON);
 });
 
