@@ -127,6 +127,13 @@ body{
 
 }
 
+#containTheOrder{
+	height:250px;
+	overflow: scroll;
+	background-color:white;
+	border-radius:6px;
+	padding:8px;
+}
 
 
 /*Popup Stuff*/

@@ -13,6 +13,8 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/Registration.js"></script>
         <script type="text/javascript" src="js/login.js"></script>    
+        <script type="text/javascript" src="js/menu.js"></script>    
+        
     </head>
     
     
@@ -126,15 +128,33 @@
         
         <div id = "OrderList">
         <h2>Orders</h2>
-        <button onclick="resetOrder()">Clear Order</button>
+       
         <hr>
+       
             <div id = "addedOrders"></div>
+             <div id="containTheOrder">
+            	Meat <button onclick="clearItems('burgerMeat', 1)">X</button>
+            	<hr>
                 <h4 id = "burgerMeat"></h4>
+                Bun <button onclick="clearItems('burgerBun', 2)">X</button>
+                <hr>
                 <h4 id = "burgerBun"></h4>
+                Cheese <button onclick="clearItems('burgerCheese', 3)">X</button>
+                <hr>
                 <h4 id = "burgerCheese"></h4>
+                Toppings <button onclick="clearItems('burgerToppings', 4)">X</button>
+                <hr>
                 <h4 id = "burgerToppings"></h4>
+                Sauces <button onclick="clearItems('burgerSauces', 5)">X</button>
+                <hr>
                 <h4 id = "burgerSauces"></h4>
+                Side <button onclick="clearItems('burgerSide', 6)">X</button>
+                <hr>
                 <h4 id = "burgerSide"></h4>
+                
+                
+                </div>
+                 <button onclick="resetOrder()">Clear Order</button>
                 <hr>
                 <h2 id = "subtotal"></h2>
                 <h2 id = "tax"></h2>
@@ -143,6 +163,7 @@
                     <a href="#orderPayment" id="payNowButton" class="pay_button">Review Order</a> 
                     <button class="button" id="orderPrevious" type="button">Order Previous</button>
                 </div> 
+       
         </div>
         
         
