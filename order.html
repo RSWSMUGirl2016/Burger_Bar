@@ -34,7 +34,7 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/menu.js"></script>
 		<style type="text/css">
-			
+
 			body {
 					background-image : url("img/background.jpg");
 					background-size: 1400px 929px;
@@ -62,7 +62,7 @@
 					padding-top: 50px;
 					padding-bottom: 50px;
 			   }
-			   
+
 		</style>
 	</head>
 	<body>
@@ -70,14 +70,14 @@
             <p align="center" style="font-size:70px; font-weight:100;">Burger Bar</p>
 			<div class="col span_1_of_3"></div>
             <div id = "signIn" class="col span_1_of_3">
-            <form id="signInArea" name = "signIn" action = "#" method = "post">
+            <form align="center"  id="signInArea" name = "signIn" action = "#" method = "post">
                 <input id="signInEmail" type="email" name="email" placeholder="Email" title="Must be a valid email address." required>
                 <input id="signInPass" type="password" name="password" placeholder="Password" title="Must be at least 8 characters" required pattern=".{8,}">
                 <input class="button" type="submit" value="Sign In" id="signInBttn">
             </form>
         </div>
-        </header>    
-		
+        </header>
+
 		<div id="order form" class="section group">
 			<form id="burger">
 				<div class="col span_1_of_3"></div>
@@ -113,7 +113,7 @@
 							<input type="radio" name="bun" value="wheat">Wheat</input>
 							<input type="radio" name="bun" value="lettuce_wrap">Lettuce Wrap</input>
 							<input type="radio" name="bun" value="texas_toast">Texas Toast</input>
-							
+
 							<br>
 							<br>
 							<h3>Choose a cheese:</h3>
@@ -122,8 +122,7 @@
 							<div><input type="radio" class="cheese" name="parmesan">Parmesan</input></div>
 							<div><input type="radio" class="cheese" name="american">American</input></div>
 							<div><input type="radio" class="cheese" name="swiss">Swiss</input></div>
-							<div><input type="radio" class="cheese" name="pepperjack">Pepper Jack</input></div>
-							
+
 							<br>
 							<h3>Choose sauces:</h3>
 							<div><input type="checkbox" name="sauces" value="ketchup">Ketchup</input></div>
@@ -145,26 +144,26 @@
 							<div><input type="checkbox" name="toppings" value="jalepenos">Jalepenos</input></div>
 						</div>
 					</div>
-			
+
 			<br>
 			<div class="tile" id="sides">
 				<div id="turkey" class="col span_1_of_3">
-					<h2 class="side_title">French Fries</h1>
+					<h3 class="side_title">French Fries</h1>
 					<input type="radio" name="side" class="type" value="french_fries"></input>
 				</div>
 
 				<div id="turkey" class="col span_1_of_3">
-					<h2 class="side_title">Tater Tots</h1>
+					<h3 class="side_title">Tater Tots</h1>
 					<input type="radio" name="side" class="type" value="tater_tots"></input>
 				</div>
 
 				<div id="veggie" class="col span_1_of_3">
-					<h2 class="side_title">Onions Rings</h1>
+					<h3 class="side_title">Onions Rings</h1>
 					<input type="radio" name="side" class="type" value="onion_rings"></input>
 				</div>
 			</div>
-			
-			<div id="submit order" class="tile"> 
+
+			<div id="submit order" class="tile">
 				<br>
 				<br>
 				<input type="submit" id="submit" onclick="submit();" value="Submit">
@@ -175,4 +174,3 @@
 		</div>
 	</body>
 </html>
-
