@@ -26,6 +26,10 @@ h1{
     border-color: white;
 }
 
+h2 {
+    font-family: "Trebuchet MS";
+}
+
 nav {
     width: 100%;
     height: 100px;
@@ -43,6 +47,7 @@ nav name{
 body{
     background-image: url("../img/Background.gif"); 
     background-size: cover;
+    font-family: "Trebuchet MS";
 }
 
 #signedIn{
@@ -58,13 +63,27 @@ body{
     
 }
 
-#orderPrevious{
-    width: 150px;
+#orderPrevious, #payNowButton{
+    width: 40%;
+    height: 100%;
     padding: 10px;
     font-weight:bold; text-decoration:none;
-    border:1px solid #000000;
-    background-color: black;
     color :white;
+    font-size: 12px;
+    background-color: black;
+}
+
+#payNowButton {
+    height: 100%;
+    padding: 10px;
+    /*box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);*/
+    font-weight:bold; text-decoration:none;
+    border:2px solid #00BB00;
+    color: #CCFFCC;
+}
+
+#orderPrevious {   
+    border: none;
 }
 
 #OrderList{
@@ -111,16 +130,6 @@ body{
 
 
 /*Popup Stuff*/
-.pay_button { 
-    width: 150px;
-    padding: 10px;
-    /*box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);*/
-    font-weight:bold; text-decoration:none;
-    border:1px solid #000000;
-    background-color: black;
-    color :white;
-
-}
 #button_div {
     bottom:0;
     text-align: center;
