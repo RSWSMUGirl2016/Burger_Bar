@@ -12,18 +12,18 @@
     <body>
         <form id = "signUpform" name="CreateAnAccount" action="./" method="post">
 		<p>Create an Account!</p>
-	    	<input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name.">
-	   	   <input type="text" id="surname" placeholder="Last Name" name="lastname" required title="Enter you last name."><br>
-	    	<input type="email" id="email" placeholder="Email" name="email" required title="Must be an email."><br>
-	    	<input type="password" id="password" placeholder="Password" name="password" title="Must be 8 or more characters." required pattern=".{8,}">
-	   	<input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPass" title="Must be 8 or more characters." required pattern=".{8,}"><br>
-	    	<select id="ccProvider" name="Credit Card Providers">
-		    <option id = "Visa" value="visa">Visa</option>
-		    <option value="mastercard">Master Card</option>
-		    <option value="amex">American Express</option>
+	    	<input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name." class="registrationForm">
+	   	    <input type="text" id="surname" placeholder="Last Name" name="lastname" required title="Enter you last name." class="registrationForm"><br>
+	    	<input type="email" id="email" placeholder="Email" name="email" required title="Must be an email." class="registrationForm"><br>
+	    	<input type="password" id="password" placeholder="Password" name="password" title="Must be 8 or more characters." required pattern=".{8,}" class="registrationForm">
+	   		<input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPass" title="Must be 8 or more characters." required pattern=".{8,}" class="registrationForm"><br>
+	    	<select id="ccProvider" name="Credit Card Providers" class="registrationForm">
+			    <option id = "Visa" value="visa">Visa</option>
+			    <option value="mastercard">Master Card</option>
+			    <option value="amex">American Express</option>
 	    	</select>
-	    	<input type="text" id="ccNumber" placeholder="Credit Card Number" name="ccnumber" title="Enter a valid credit card number."><br>
-	    	<input type="submit" class="button" id ="signUp" value="Sign Up">   
+	    	<input type="text" id="ccNumber" placeholder="Credit Card Number" name="ccnumber" title="Enter a valid credit card number." class="registrationForm"><br>
+	    	<input type="submit" class="button" id ="signUp" value="Sign Up" class="registrationForm">   
 	    </form>
 
     </body>
