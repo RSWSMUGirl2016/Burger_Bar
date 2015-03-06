@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Burger Bar-The Best Burgers in Texas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/Registration.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>    
+    </head>
+    
+    
+    
+    <body>
+        <nav>
+            <img id = "logo" src="img/BurgerLogo.png" alt="Burger Bar Logo" title="Burger Bar" width=100px>
+            <name>Burger Bar</name>
+             <!-- Login Starts Here -->
+                  
+            <div id="registerContainer">
+                <a href="#" id="registerButton"><span>Register</span><em></em></a>
+                <div style="clear:both"></div>
+                <div id="registerBox">                
+                    <form id="register-content" name = "signInArea" method="post">
+                        <fieldset id="body">
+                            <fieldset>
+                               <input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name.">
+	   	  					    <input type="text" id="surname" placeholder="Last Name" name="lastname" required title="Enter you last name."><br>
+	    						<input type="email" id="email" placeholder="Email" name="email" required title="Must be an email."><br>
+	    						<input type="password" id="password" placeholder="Password" name="password" title="Must be 8 or more characters." required pattern=".{8,}">
+	   							<input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPass" title="Must be 8 or more characters." required pattern=".{8,}"><br>
+	    						<select id="ccProvider" name="Credit Card Providers">
+		   						 	<option id = "Visa" value="visa">Visa</option>
+		    						<option value="mastercard">Master Card</option>
+		    						<option value="amex">American Express</option>
+	    						</select>
+	    						<input type="text" id="ccNumber" placeholder="Credit Card Number" name="ccnumber" title="Enter a valid credit card number."><br>
+                            </fieldset>
+                            <input type="submit" class="button" id ="signUp" value="Sign Up">   
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+             
+             
+             
+            <div id="loginContainer">
+                <a href="#" id="loginButton"><span>Login</span><em></em></a>
+                <div style="clear:both"></div>
+                <div id="loginBox">                
+                    <form id="login-content" name = "signInArea" method="post">
+                        <fieldset id="body">
+                            <fieldset>
+                                <input class ="navInput" id="signInEmail" type="email" name="email" placeholder="Email" title="Must be a valid email address." required>
+                            </fieldset>
+                            <fieldset>
+                                <input class ="navInput" id="signInPass" type="password" name="password" placeholder="Password" title="Must be at least 8 characters" required pattern=".{8,}">
+                            </fieldset>
+                            <input class="button" type="submit" value="Login" id="signInBttn">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+       
+            <!-- Login Ends Here -->    
+       </nav>
+            
+        <div id = "signedIn" class="rightHeader">
+            <h2>Welcome!</h2>
+            <a href="index.html" id="signOut">Sign Out</a>
+        </div>
+        <div id = "MenuItems"><h2>MENU</h2>
+            <hr>
+        <h2>The Essentials</h2>
+        	<table width=70% align="center" border-spacing=>
+        		<td>
+        			<div id = "meats"  class="menuOption" >
+        			</div>
+        		</td>
+         
+         		<td>
+        			<div id = "buns"  class="menuOption" >
+        			</div>
+        		</td>
+        		<td>  
+        			<div id = "cheeses"  class="menuOption">
+        			</div>
+        		</td>
+        </table>
+        
+        <h2>The Flourishes</h2>
+         <table align="center">
+         <tr>
+         	<td><h3>Toppings</h3></td>
+         	<td><h3>Sauces</h3></td>
+         </tr>
+         <tr>
+         	<td>
+        		<div id = "toppings" class="menuOption" align="left">
+        		</div>
+        	</td>
+            <td>
+        		<div id = "sauces" class="menuOption" align="left">
+        		</div>
+        	</td>
+        </tr>
+        </table>
+        
+        <h2> The Final Touch</h2>
+        <table align="center" style="padding-bottom:30px;">
+        <td>
+        	<div id = "sides" class="menuOption">
+        	</div>
+        </td>
+        </table>
+        </div>    
+        
+        <div id = "OrderList">
+        <h2>Orders</h2>
+        <hr>
+            <div id = "addedOrders"></div>
+                <h4 id = "burgerMeat"></h4>
+                <h4 id = "burgerBun"></h4>
+                <h4 id = "burgerCheese"></h4>
+                <h4 id = "burgerToppings"></h4>
+                <h4 id = "burgerSauces"></h4>
+                <h4 id = "burgerSide"></h4>
+                <hr>
+                <h2 id = "subtotal"></h2>
+                <h2 id = "tax"></h2>
+                <h3 id = "totalPrice"></h3>
+                <div id="button_div"> 
+                    <a href="#loginScreen" class="pay_button">PayNow</a> 
+                    <button class="button" id="orderPrevious" type="button">Order Previous</button>
+                </div> 
+        </div>
+        
+        
+        <div id="loginScreen"> 
+            <a href="#" class="cancel">&times;</a> 
+            <form class="userForm" method="POST">
+                <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
+                <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
+                <input class="userInput" type="email" name="email"  placeholder="Email"><br>
+                <input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
+                <select class="userInput" name = "ccprovider">
+                    <option selected="selected" id="defaultProvider">Credit Card</option>
+                    <option value="Mastercard">Master Card</option>
+                    <option value="American Express">American Express</option>
+                    <option value="Visa">Visa</option>
+                </select><br>
+                <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
+                <input class="userInput" type="submit" value="Order">
+            </form>
+        </div> 
+
+        <div id="cover" > 
+        </div> 
+
+        
+
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
