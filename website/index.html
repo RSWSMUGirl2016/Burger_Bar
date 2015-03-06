@@ -81,7 +81,7 @@
         <div id = "MenuItems"><h2>MENU</h2>
             <hr>
         <h2>The Essentials</h2>
-        	<table width=60% align="center" id="essentialsTable">
+        	<table width=70% align="center" border-spacing=>
         		<td>
         			<div id = "meats"  class="menuOption" >
         			</div>
@@ -98,7 +98,7 @@
         </table>
         
         <h2>The Flourishes</h2>
-         <table align="center" id="flourishesTable">
+         <table align="center">
          <tr>
          	<td><h3>Toppings</h3></td>
          	<td><h3>Sauces</h3></td>
@@ -107,22 +107,24 @@
          	<td>
         		<div id = "toppings" class="menuOption" align="left">
         		</div>
-        		<button class="flourishButton button" onclick="addTopping();">Add Topping</button>
+        		<button onclick="addTopping();">Add Topping</button>
         	</td>
             <td>
         		<div id = "sauces" class="menuOption" align="left">
         		
         		</div>
-        		<button class="flourishButton button" onclick="addSauce();">Add Sauce</button>
+        		<button onclick="addSauce();">Add Sauce</button>
         	</td>
         </tr>
         </table>
         
         <h2> The Final Touch</h2>
-            <div id="sidesContainer">
-        	   <div id = "sides" class="menuOption">
-        	   </div>
-            </div>
+        <table align="center" style="padding-bottom:30px;">
+        <td>
+        	<div id = "sides" class="menuOption">
+        	</div>
+        </td>
+        </table>
         </div>    
 
 					<!-- VIEWING ORDER PROGRESS -->

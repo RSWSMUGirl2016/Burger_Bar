@@ -54,53 +54,6 @@ body{
     display: none;
 }
 
-#essentials {
-    width: 60%;
-    height: 60px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.essential {
-    float: left;
-    margin: 0 auto;
-    text-align: center;
-}
-
-td, tr {
-    padding-right: 0;
-}
-
-tbody {
-    text-align: center;
-}
-
-#essentialsTable {
-    padding-left: 38px;
-}
-
-#flourishesTable {
-    
-}
-
-
-
-/*#meats {
-    float: left;
-}
-
-#cheeses {
-    float: left;
-}
-
-#buns {
-    float: center;
-}*/
-
-#spacing {
-    clear: both;
-}
-
 #MenuItems{
     width: 70%;
     margin: 150px 10px 10px 20px;
@@ -146,11 +99,9 @@ tbody {
 }
 
 
-
 .menuOption {	
 	font-size:15px;
 	width: 120px;
-    text-align: center;
 }
 
 
@@ -166,13 +117,6 @@ tbody {
 
 }
 
-.flourishButton {
-    margin-top: 15px;
-    width: 88%;
-    border: none;
-    height: 35px;
-    font-size: 12px;
-}
 #containTheOrder{
 	height:250px;
 	overflow: scroll;
@@ -181,12 +125,6 @@ tbody {
 	padding:8px;
 }
 
-.button {
-    font-weight:bold; text-decoration:none;
-    color :white;
-    font-size: 12px;
-    background-color: black;
-}
 
 /*Popup Stuff*/
 #button_div {
@@ -274,24 +212,6 @@ tbody {
 	border-radius:6px;
 	-webkit-appearance: none;
 	border:none;
-    margin: 0 10px;
-    text-align: center;
-    padding-bottom: 15px;
-
-}
-
-#sides {
-    text-align: center;
-    width: 150px;
-    margin-bottom: 25px;
-    margin-left: 42.5%;
-}
-
-#sidesContainer {
-    text-align: center;
-    padding: 10px auto;
-    width: 100%;
-    margin-bottom: 45px;
 }
 
 

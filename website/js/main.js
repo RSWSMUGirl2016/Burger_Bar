@@ -84,38 +84,6 @@ function reviewOrder() {
     //console.log(document.getElementById("burgerMeat").innerHTML);
 }
 
-<<<<<<< HEAD
-function addTopping() {
-	var mydiv = document.getElementById("burgerToppings");
-    var newcontent = document.createElement('div');
-    if (typeof tempTopping != 'undefined') {
-        newcontent.innerHTML = "<p>"+tempTopping+"</p>";
-    }
-
-    while (newcontent.firstChild) {
-        mydiv.appendChild(newcontent.firstChild);
-    }
-
-	
-	
-	document.getElementById("burgerToppings").innerHTML = value;
-
-
-}
-
-
-
-function addSauce() {
-	var mydiv = document.getElementById("burgerSauces");
-    var newcontent = document.createElement('div');
-    if (typeof tempSauce != 'undefined') {
-        newcontent.innerHTML = "<p>"+tempSauce+"</p>";
-    }
-
-    while (newcontent.firstChild) {
-        mydiv.appendChild(newcontent.firstChild);
-    }
-=======
 // on review order click, populate the pop up with the order and fade in
 $('#payNowButton').click( function() { 
     reviewOrder(); 
@@ -128,7 +96,6 @@ $('#payNowButton').click( function() {
 $('#exitOrderPayment').click( function() {
     $('#orderPayment').fadeOut("slow");
 });
->>>>>>> 00fa6872f82586c51a91316bd762d9b18e65080f
 
 
 var Request = new XMLHttpRequest();
