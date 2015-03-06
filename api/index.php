@@ -53,6 +53,10 @@ $app->get('/getBuns', function () {
 		"price": 0.50
 	},
 	{
+		"name": "Lettuce Wrap",
+		"price": 0.75
+	},
+	{
 		"name": "Texas Toast",
 		"price": 0.75
 	}

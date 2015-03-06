@@ -1,8 +1,9 @@
 language: python
+branches:
+  only:
+      - gh-pages
 python:
- - "2.6"
  - "2.7"
- - "3.4"
 install:
- - "pip install ."
-script: "python setup.py test"
+  - "pip install html5validator"
+script: "html5validator"
