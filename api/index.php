@@ -17,6 +17,10 @@ $app->get('/getMeats', function () {
 			"price": 2
 		},
 		{
+			"name": "Chicken",
+			"price": 2
+		},
+		{
 			"name": "1/2 lb. Beef",
 			"price": 2.25
 		},
