@@ -24,9 +24,12 @@ var sidePrices = new Array();
 var tempTopping;
 var tempSauce;
 
-var subTotal = 0;
-var total = 0;
-var tax = 0;
+
+var totalPrices = new Array();
+
+var subTotal;
+var total;
+var tax;
 
 
 
@@ -66,40 +69,87 @@ function Sides(name, price){
 /*GETTING THE VALUES FROM THE FORM */
     
 function addItem(type, name, value){
-console.log("TYPE: " +type);
-console.log("NAME: " +name);
-console.log("VALUE: "+value);
+var printOut = value;
+
+var price;
 	if(type == "1"){
-		document.getElementById("burgerMeat").innerHTML = value;
+		
+		for(var i = 0; i < meatPrices.length; i++) {
+			var tempMeat = meatPrices[i];
+			if(tempMeat.name == value){
+				price = tempMeat.price;
+				totalPrices[1]=price;
+			}
+		} if (price > 0){
+			printOut = value+"    ("+price+")";
+		}
+		document.getElementById("burgerMeat").innerHTML = printOut;
+		
 	} else if(type == "2"){
-		document.getElementById("burgerBun").innerHTML = value;
-	}
-	if(type == "3"){
+
+		for(var i = 0; i < bunPrices.length; i++) {
+			var temp = bunPrices[i];
+			if(temp.name == value){
+				price = temp.price;
+				totalPrices[2]=price;
+			}
+		} if (price > 0){
+			printOut = value+"    ("+price+")";
+		}
+		document.getElementById("burgerBun").innerHTML = printOut;
+	} if(type == "3"){
+		totalPrices[3]="0.0";
 		document.getElementById("burgerCheese").innerHTML = value;
-	}
-	if(type == "4"){
+	} if(type == "4"){
+		totalPrices[4]="0.0";
 		document.getElementById("burgerToppings").innerHTML = value;
-	}
-	if(type == "6"){
-		document.getElementById("burgerSide").innerHTML = value;
+	} if(type == "6"){
+	
+		for(var i = 0; i < sidePrices.length; i++) {
+			var temp = sidePrices[i];
+			if(temp.name == value){
+				price = temp.price;
+				totalPrices[6]=price;
+			}
+		} if (price > 0){
+			printOut = value+"    ("+price+")";
+		}
+		document.getElementById("burgerSide").innerHTML = printOut;
 	}
 	
-      
-return;
-	/*
-       // tax = Math.round((subTotal*0.08)*100)/100;
-         //   total = Math.round((tax + subTotal)*100)/100;
-           // document.getElementById("totalPrice").innerHTML = "Total Price: $" + total;
-            //document.getElementById("tax").innerHTML = "Tax(8%): $" + tax;
-            //document.getElementById("subtotal").innerHTML = "SubTotal: $" +subTotal;
-};*/
+	
+	calculatePrice();
+	document.getElementById("totalPrice").innerHTML = "Total Price: $" + total;
+	document.getElementById("tax").innerHTML = "Tax(8%): $" + tax;
+    document.getElementById("subtotal").innerHTML = "SubTotal: $" +subTotal;
+	
+	return;
+}
 
+
+function calculatePrice() {
+	total=0;
+	subTotal=0;
+	
+	for(var i = 0; i < totalPrices.length; i++) {	
+		var floating = parseFloat(totalPrices[i]);
+		subTotal = subTotal + floating;	
+	} 
+	tax = Math.round((subTotal*0.08)*100)/100;
+	total = Math.round((tax + subTotal)*100)/100;
+
+}
+
+
+function setPriceBase() {
+	for(var i = 0; i < 7; i++) {
+		totalPrices[i] = "0.0";
+	}
 }
     
 function getTopping(toppingType)
 {
 	tempTopping = toppingType;
-
 }
 
 function getSauce(sauce)
@@ -115,12 +165,7 @@ function addTopping() {
     while (newcontent.firstChild) {
         mydiv.appendChild(newcontent.firstChild);
     }
-
-	
-	
 	document.getElementById("burgerToppings").innerHTML = value;
-
-
 }
 
 
@@ -132,13 +177,8 @@ function addSauce() {
 
     while (newcontent.firstChild) {
         mydiv.appendChild(newcontent.firstChild);
-    }
-
-	
-	
+    }	
 	document.getElementById("burgerSauces").innerHTML = value;
-
-
 }
 	
 
@@ -161,6 +201,9 @@ Request.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/getMenu', tr
 Request.send(JSON.stringify(document.body));
 
 function myFunction(arr) {
+	setPriceBase();
+
+
     var patties = "<select class='menu' name='listOfMeat' onchange='addItem(this.id, this.name, this.value)' id='1'><option name='meat' id=0 >Meat</option>";
     var cheese ="<select class='menu'  name = 'cheeses' id ='3' onchange='addItem(this.id, this.name, this.value)'><option name='cheeseDrop'>Cheese</option>";
     var toppings="<select multiple  class='selectionMenu' name ='toppings' id ='4' onchange='getTopping(this.value)'>";
@@ -173,6 +216,7 @@ function myFunction(arr) {
     for(i = 0; i < arr.length; i++) {
     	var product = JSON.stringify(arr[i]["name"]);
     	product = product.substr(1,product.length-2);
+    	var price = JSON.stringify(arr[i]["price"]);
     	
     	
     	var id = JSON.stringify(arr[i]["id"]);
@@ -180,27 +224,48 @@ function myFunction(arr) {
     	
     	if (id == 1) {
     		var temp = new Meat(5, product);
-    		patties += '<option name="meat" >'+product+'</option>';       
+    		patties += '<option value="'+product+'">'+product+'</option>';  
+    	
+    		var newMeat = new Meat(product, price)
+    		meatPrices.push(newMeat);
+    		     
     		
     	} if (id == 2) {
     		var temp = new Buns(5, product);
-    		breads += '<option name="bun" >'+product+'</option>';       
+    		breads += '<option name="bun" >'+product+'</option>';   
+    		
+    		
+    		var newBun = new Buns(product, price)
+    		bunPrices.push(newBun);    
     		
     	} if (id == 3) {
     		var temp = new Cheese(5, product);
-    		cheese += '<option name="cheese">'+product+'</option>';       
+    		cheese += '<option name="cheese" >'+product+'</option>'; 
+    		
+    		
+    		var newProduct = new Cheese(product, price)
+    		cheesePrices.push(newProduct);      
     		
     	} if (id == 4) {
     		var temp = new Topping(5, product);
-    		toppings += '<option name="topping">'+product+'</option><br>';       
+    		toppings += '<option name="topping">'+product+'</option><br>';  
+    		
+    		var newProduct = new Topping(product, price)
+    		toppingPrices.push(newProduct);         
     		
     	} if (id == 5) {
     		var temp = new Sauce(5, product);
-    		sauces += '<option name="sauce">'+product+'</option><br>';      
+    		sauces += '<option name="sauce">'+product+'</option><br>';     
+    		
+    		var newProduct = new Sauce(product, price)
+    		saucePrices.push(newProduct);     
     		
     	} if (id == 6) {
     		var temp = new Sides(5, product);
-    		sideChoice += '<option name="side">'+product+'</option>';       
+    		sideChoice += '<option name="side">'+product+'</option>';  
+    		
+    		var newProduct = new Sides(product, price)
+    		sidePrices.push(newProduct);         
     		
     	}	
     	
@@ -214,28 +279,17 @@ function myFunction(arr) {
     document.getElementById("toppings").innerHTML = toppings+"</form>";
     document.getElementById("sides").innerHTML = sideChoice+"</form>";
     document.getElementById("sauces").innerHTML = sauces+"</form>";
-    
-    
-
 }
 
 
 
 function resetOrder() {
-
-
 		document.getElementById("burgerMeat").innerHTML = "";
 		document.getElementById("burgerBun").innerHTML = "";
 		document.getElementById("burgerCheese").innerHTML = "";
 		document.getElementById("burgerToppings").innerHTML = "";
 		document.getElementById("burgerSide").innerHTML = "";
 		document.getElementById("burgerSauces").innerHTML = "";
-		
-	
-	
-
-
-
 }
 
 function placeOrder() {
