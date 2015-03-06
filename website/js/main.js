@@ -98,11 +98,6 @@ $('#exitOrderPayment').click( function() {
 });
 
 
-
- 
-
-
-
 var Request = new XMLHttpRequest();
 Request.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
@@ -147,51 +142,36 @@ function myFunction(arr) {
     	
     		var newMeat = new Meat(product, price)
     		meatPrices.push(newMeat);
-    		     
-    		
     	} if (id == 2) {
     		var temp = new Buns(5, product);
     		breads += '<option name="bun" >'+product+'</option>';   
-    		
-    		
     		var newBun = new Buns(product, price)
     		bunPrices.push(newBun);    
-    		
     	} if (id == 3) {
     		var temp = new Cheese(5, product);
     		cheese += '<option name="cheese" >'+product+'</option>'; 
-    		
-    		
     		var newProduct = new Cheese(product, price)
     		cheesePrices.push(newProduct);      
-    		
     	} if (id == 4) {
     		var temp = new Topping(5, product);
     		toppings += '<option name="topping">'+product+'</option><br>';  
-    		
     		var newProduct = new Topping(product, price)
     		toppingPrices.push(newProduct);         
-    		
     	} if (id == 5) {
     		var temp = new Sauce(5, product);
     		sauces += '<option name="sauce">'+product+'</option><br>';     
-    		
     		var newProduct = new Sauce(product, price)
     		saucePrices.push(newProduct);     
-    		
     	} if (id == 6) {
     		var temp = new Sides(5, product);
     		sideChoice += '<option name="side">'+product+'</option>';  
-    		
     		var newProduct = new Sides(product, price)
     		sidePrices.push(newProduct);         
-    		
     	}	
     	
     	tempItemID +=1;
     }
-    
-    
+
     document.getElementById("meats").innerHTML = patties+"</form>";
     document.getElementById("cheeses").innerHTML = cheese+"</form>";
     document.getElementById("buns").innerHTML = breads+"</form>";

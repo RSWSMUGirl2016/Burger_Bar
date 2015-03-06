@@ -23,8 +23,9 @@
         <nav>
             <img id = "logo" src="img/BurgerLogo.png" alt="Burger Bar Logo" title="Burger Bar" width=100px>
             <name>Burger Bar</name>
-             <!-- Login Starts Here -->
-                  
+            
+            
+             <!-- Login Starts Here -->      
             <div id="registerContainer">
                 <a href="#" id="registerButton"><span>Register</span><em></em></a>
                 <div style="clear:both"></div>
@@ -64,7 +65,7 @@
                             <fieldset>
                                 <input class ="navInput" id="signInPass" type="password" name="password" placeholder="Password" title="Must be at least 8 characters" required pattern=".{8,}">
                             </fieldset>
-                            <input class="button" type="submit" value="Login" id="signInBttn">
+                            <input class="button" type="button" value="Login" id="signInBttn" onclick="userTriesToLogin();">
                         </fieldset>
                     </form>
                 </div>

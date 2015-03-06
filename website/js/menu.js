@@ -25,6 +25,8 @@ function resetOrder() {
 		document.getElementById("burgerToppings").innerHTML = "";
 		document.getElementById("burgerSide").innerHTML = "";
 		document.getElementById("burgerSauces").innerHTML = "";
+		setPriceBase();
+		calculatePrice();
 
 }
 
@@ -150,7 +152,7 @@ function calculatePrice(){
 	
 	document.getElementById("totalPrice").innerHTML = "Total Price: $" + total;
 	document.getElementById("tax").innerHTML = "Tax(8%): $" + tax;
-    document.getElementById("subtotal").innerHTML = "SubTotal:x $" +subTotal;
+    document.getElementById("subtotal").innerHTML = "SubTotal: $" +subTotal;
   
 	
 
