@@ -21,6 +21,8 @@ var cheesePrices = new Array();
 var toppingPrices = new Array();
 var saucePrices = new Array();
 var sidePrices = new Array();
+var tempTopping;
+var tempSauce;
 
 var subTotal = 0;
 var total = 0;
@@ -75,11 +77,14 @@ console.log("VALUE: "+value);
 	if(type == "3"){
 		document.getElementById("burgerCheese").innerHTML = value;
 	}
+	if(type == "4"){
+		document.getElementById("burgerToppings").innerHTML = value;
+	}
 	if(type == "6"){
 		document.getElementById("burgerSide").innerHTML = value;
 	}
 	
-	      
+      
 return;
 	/*
        // tax = Math.round((subTotal*0.08)*100)/100;
@@ -91,7 +96,51 @@ return;
 
 }
     
+function getTopping(toppingType)
+{
+	tempTopping = toppingType;
 
+}
+
+function getSauce(sauce)
+{
+	tempSauce = sauce;
+}
+
+function addTopping() {
+	var mydiv = document.getElementById("burgerToppings");
+    var newcontent = document.createElement('div');
+    newcontent.innerHTML = "<p>"+tempTopping+"</p>";
+
+    while (newcontent.firstChild) {
+        mydiv.appendChild(newcontent.firstChild);
+    }
+
+	
+	
+	document.getElementById("burgerToppings").innerHTML = value;
+
+
+}
+
+
+
+function addSauce() {
+	var mydiv = document.getElementById("burgerSauces");
+    var newcontent = document.createElement('div');
+    newcontent.innerHTML = "<p>"+tempSauce+"</p>";
+
+    while (newcontent.firstChild) {
+        mydiv.appendChild(newcontent.firstChild);
+    }
+
+	
+	
+	document.getElementById("burgerSauces").innerHTML = value;
+
+
+}
+	
 
 
 
@@ -114,18 +163,16 @@ Request.send(JSON.stringify(document.body));
 function myFunction(arr) {
     var patties = "<select class='menu' name='listOfMeat' onchange='addItem(this.id, this.name, this.value)' id='1'><option name='meat' id=0 >Meat</option>";
     var cheese ="<select class='menu'  name = 'cheeses' id ='3' onchange='addItem(this.id, this.name, this.value)'><option name='cheeseDrop'>Cheese</option>";
-    var toppings="";
+    var toppings="<select multiple  class='selectionMenu' name ='toppings' id ='4' onchange='getTopping(this.value)'>";
     var sideChoice="<select class='menu'  onchange='addItem(this.id, this.name, this.value)' id='6'><option name='sideDrop' >Sides</option>";
     var breads="<select class='menu' onchange='addItem(this.id, this.name, this.value)'  id='2'><option name='bunDrop' >Bun</option>";
-    var sauces="";
+    var sauces="<select multiple  class='selectionMenu' name ='sides' id ='4' onchange='getSauce(this.value)'>";
     var i;
     var tempItemID = 1;
     
     for(i = 0; i < arr.length; i++) {
     	var product = JSON.stringify(arr[i]["name"]);
     	product = product.substr(1,product.length-2);
-    	
-    	
     	
     	
     	var id = JSON.stringify(arr[i]["id"]);
@@ -145,11 +192,11 @@ function myFunction(arr) {
     		
     	} if (id == 4) {
     		var temp = new Topping(5, product);
-    		toppings += '<input type="checkbox" name="topping">'+product+'</input><br>';       
+    		toppings += '<option name="topping">'+product+'</option><br>';       
     		
     	} if (id == 5) {
     		var temp = new Sauce(5, product);
-    		sauces += '<input type="checkbox" name="sauce" >'+product+'</input><br>';       
+    		sauces += '<option name="sauce">'+product+'</option><br>';      
     		
     	} if (id == 6) {
     		var temp = new Sides(5, product);
@@ -172,6 +219,23 @@ function myFunction(arr) {
 
 }
 
+
+function resetOrder() {
+
+
+		document.getElementById("burgerMeat").innerHTML = "";
+		document.getElementById("burgerBun").innerHTML = "";
+		document.getElementById("burgerCheese").innerHTML = "";
+		document.getElementById("burgerToppings").innerHTML = "";
+		document.getElementById("burgerSide").innerHTML = "";
+		document.getElementById("burgerSauces").innerHTML = "";
+		
+	
+	
+
+
+
+}
 
 /*
 var url = "./api/index.php/getMeats";
