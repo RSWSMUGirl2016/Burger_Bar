@@ -98,30 +98,20 @@ body{
     box-shadow: 8px 8px 8px #888;
 }
 
-.MenuPics{
-    height:auto; 
-    width:auto; 
-    max-width:100px; 
-    max-height:100px;
-    
-}
 
-.menuOption 
-{
-	
+.menuOption {	
 	font-size:15px;
 	width: 120px;
 }
 
 
-.menu{
-  background: white;
+.menu {
+	background: white;
 	height:40px;
-   width: 150px;
-   text-align:center;
+	width: 150px;
+	text-align:center;
  	border:none;
  	padding-left:20px;
- 
   	font-size: 15px; 
   	-webkit-appearance: none;
 
@@ -142,21 +132,13 @@ body{
     text-align: center;
 }
 
-#cover{
-    position:fixed;
-    top:0;
-    left:0;
-    background:white;
-    z-index:15; width:90%;
-    height:90%;
 
-}
-
-#orderPayment { 
-    height:380px;
+#orderPayment{ 
+    height:420px;
     width:340px;
-    margin:0 auto;
-    position:relative;
+    margin-left:30%;
+    
+    position:fixed;
     z-index:10; 
     display:none;
     background-color: rgba(255,255,255,0.9);
@@ -167,7 +149,30 @@ body{
 #orderPayment:target, #orderPayment:target { 
     display:block;
      opacity:2;
+     
 } 
+
+#reviewOrderContent {
+	top:0;
+	left:0;
+	width:90%;
+	height:90%;
+	position: absolute;
+	padding:5px;
+
+}
+
+#orderContent {
+	padding:7px;
+	overflow:scroll;
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+	height:150px;
+
+}
+
 .cancel { 
     display:block;
     position:absolute;
@@ -207,10 +212,8 @@ body{
 	border-radius:6px;
 	-webkit-appearance: none;
 	border:none;
-
-
-
 }
+
 
 
 
