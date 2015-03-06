@@ -85,6 +85,10 @@ $app->get('/getCheeses', function () {
 	{
 		"name": "Swiss",
 		"price": 0.35
+	},
+	{
+		"name": "Pepper Jack",
+		"price": 0.35
 	}
 	] }';
     echo json_encode(json_decode($cheeses, true));
