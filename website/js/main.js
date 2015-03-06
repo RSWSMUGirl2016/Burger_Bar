@@ -173,6 +173,17 @@ function myFunction(arr) {
 }
 
 
+function placeOrder() {
+    url = "./api/index.php/placeUserOrder";
+    request.open('POST', url, false);
+    request.send();
+    if(request.status === 200){
+        alert("Order Placed!");
+    }
+}
+
+
+
 /*
 var url = "./api/index.php/getMeats";
 var request = new XMLHttpRequest();

@@ -27,7 +27,7 @@
                 <a href="#" id="registerButton"><span>Register</span><em></em></a>
                 <div style="clear:both"></div>
                 <div id="registerBox">                
-                    <form id="register-content" name = "signInArea" method="post">
+                    <form id="register-content" name ="signInArea" method="post">
                         <fieldset id="body">
                             <fieldset>
                                <input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name." class="registrationForm">
@@ -144,7 +144,7 @@
         
         <div id="orderPayment"> 
             <a href="#" class="cancel">&times;</a> 
-            <form class="userForm" method="POST">
+            <form class="userForm" method="POST" onsubmit="return placeOrder()">
                 <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
                 <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
                 <input class="userInput" type="email" name="email"  placeholder="Email"><br>
@@ -158,10 +158,6 @@
                 <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
                 <input class="userInput" type="submit" value="Order">
             </form>
-        </div> 
-
-        <div id="confirmation">
-            Order Confirmed!
         </div> 
 
         
