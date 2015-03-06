@@ -54,9 +54,9 @@ function makeASammich() //post
 {
     var Request = new XMLHttpRequest();
 
-Request.open('POST', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
+    Request.open('POST', 'http://private-25fc-burgerbarredeux.apiary-mock.com/orders');
 
-Request.setRequestHeader('Content-Type', 'application/json');
+    Request.setRequestHeader('Content-Type', 'application/json');
 
 Request.onreadystatechange = function () {
   if (this.readyState === 4) {
@@ -82,6 +82,10 @@ var body = {
 };
 
 Request.send(JSON.stringify(body));
+};
+
+function submit() {
+    document.getElementById("submit").onclick=makeASammich;
 };
 
 function eatTheSammich() //delete
