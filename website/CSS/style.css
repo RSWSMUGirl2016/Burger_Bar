@@ -26,6 +26,10 @@ h1{
     border-color: white;
 }
 
+h2 {
+    font-family: "Trebuchet MS";
+}
+
 nav {
     width: 100%;
     height: 100px;
@@ -43,6 +47,7 @@ nav name{
 body{
     background-image: url("../img/Background.gif"); 
     background-size: cover;
+    font-family: "Trebuchet MS";
 }
 
 #signedIn{
@@ -58,13 +63,27 @@ body{
     
 }
 
-#orderPrevious{
-    width: 150px;
+#orderPrevious, #payNowButton{
+    width: 40%;
+    height: 100%;
     padding: 10px;
     font-weight:bold; text-decoration:none;
-    border:1px solid #000000;
-    background-color: black;
     color :white;
+    font-size: 12px;
+    background-color: black;
+}
+
+#payNowButton {
+    height: 100%;
+    padding: 10px;
+    /*box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);*/
+    font-weight:bold; text-decoration:none;
+    border:2px solid #00BB00;
+    color: #CCFFCC;
+}
+
+#orderPrevious {   
+    border: none;
 }
 
 #OrderList{
@@ -111,16 +130,6 @@ body{
 
 
 /*Popup Stuff*/
-.pay_button { 
-    width: 150px;
-    padding: 10px;
-    /*box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);*/
-    font-weight:bold; text-decoration:none;
-    border:1px solid #000000;
-    background-color: black;
-    color :white;
-
-}
 #button_div {
     bottom:0;
     text-align: center;
@@ -145,18 +154,8 @@ body{
     border:5px solid #cccccc;
 }
 
-#confirmation { 
-    height:380px;
-    width:340px;
-    margin:0 auto;
-    position:relative;
-    z-index:10; 
-    display:none;
-    background-color: rgba(255,255,255,0.9);
-    border:5px solid #cccccc;
-}
 
-#orderPayment:target, #orderPayment:target + #cover{ 
+#orderPayment:target, #orderPayment:target { 
     display:block;
      opacity:2;
 } 
@@ -280,7 +279,7 @@ body{
 }
 
 #login-content fieldset {
-    margin:0 0 12px 0;
+    margin:0 0 0 0;
     display:block;
     border:0;
     padding:0;
@@ -325,8 +324,9 @@ fieldset#body {
 /* Sign In Button */
 #login-content #signInBttn {
 	width:auto;
+    height: 38px;
     float:left;
-    background:#8B727F;
+    background:black;
     color:#fff;
     padding:7px 10px 8px 10px;
     text-shadow:0px -1px #278db8;
@@ -334,7 +334,7 @@ fieldset#body {
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
-    margin:0 12px 0 0;
+    margin:10px 0 0 82px;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }
@@ -476,7 +476,7 @@ fieldset#body {
 #register-content #signUp {
     width:auto;
     float:left;
-    background:#8B727F;
+    background: #000; /*#8B727F;*/
     color:#fff;
     padding:7px 10px 8px 10px;
     text-shadow:0px -1px #278db8;
@@ -484,7 +484,7 @@ fieldset#body {
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
-    margin:0 12px 0 0;
+    margin: 0 0 0 75px;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Registration.css">
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
@@ -26,22 +27,22 @@
                 <a href="#" id="registerButton"><span>Register</span><em></em></a>
                 <div style="clear:both"></div>
                 <div id="registerBox">                
-                    <form id="register-content" name = "signInArea" method="post">
+                    <form id="register-content" name ="signInArea" method="post">
                         <fieldset id="body">
                             <fieldset>
-                               <input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name.">
-	   	  					    <input type="text" id="surname" placeholder="Last Name" name="lastname" required title="Enter you last name."><br>
-	    						<input type="email" id="email" placeholder="Email" name="email" required title="Must be an email."><br>
-	    						<input type="password" id="password" placeholder="Password" name="password" title="Must be 8 or more characters." required pattern=".{8,}">
-	   							<input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPass" title="Must be 8 or more characters." required pattern=".{8,}"><br>
-	    						<select id="ccProvider" name="Credit Card Providers">
+                               <input type="text" id="givenName" placeholder="First Name" name="firstname" required title ="Enter your first name." class="registrationForm">
+	   	  					    <input type="text" id="surname" placeholder="Last Name" name="lastname" required title="Enter you last name." class="registrationForm"><br>
+	    						<input type="email" id="email" placeholder="Email" name="email" required title="Must be an email." class="registrationForm"><br>
+	    						<input type="password" id="password" placeholder="Password" name="password" title="Must be 8 or more characters." required pattern=".{8,}" class="registrationForm">
+	   							<input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPass" title="Must be 8 or more characters." required pattern=".{8,}" class="registrationForm"><br>
+	    						<select id="ccProvider" name="Credit Card Providers" class="registrationForm">
 		   						 	<option id = "Visa" value="visa">Visa</option>
 		    						<option value="mastercard">Master Card</option>
 		    						<option value="amex">American Express</option>
 	    						</select>
-	    						<input type="text" id="ccNumber" placeholder="Credit Card Number" name="ccnumber" title="Enter a valid credit card number."><br>
+	    						<input type="text" id="ccNumber" placeholder="Credit Card Number" name="ccnumber" title="Enter a valid credit card number." class="registrationForm"><br>
                             </fieldset>
-                            <input type="submit" class="button" id ="signUp" value="Sign Up">   
+                            <input type="submit" class="button" id ="signUp" value="Sign Up" class="registrationForm">   
                         </fieldset>
                     </form>
                 </div>
@@ -139,7 +140,7 @@
                 <h2 id = "tax"></h2>
                 <h3 id = "totalPrice"></h3>
                 <div id="button_div"> 
-                    <a href="#orderPayment" class="pay_button">PayNow</a> 
+                    <a href="#orderPayment" id="payNowButton" class="pay_button">PayNow</a> 
                     <button class="button" id="orderPrevious" type="button">Order Previous</button>
                 </div> 
         </div>
@@ -147,7 +148,7 @@
         
         <div id="orderPayment"> 
             <a href="#" class="cancel">&times;</a> 
-            <form class="userForm" method="POST">
+            <form class="userForm" method="POST" onsubmit="return placeOrder()">
                 <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
                 <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
                 <input class="userInput" type="email" name="email"  placeholder="Email"><br>
@@ -161,10 +162,6 @@
                 <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
                 <input class="userInput" type="submit" value="Order">
             </form>
-        </div> 
-
-        <div id="confirmation">
-            Order Confirmed!
         </div> 
 
         

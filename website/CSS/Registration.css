@@ -1,14 +1,14 @@
-body{
+#body{
     background-image: url("../img/Background.gif"); 
     background-size: cover;
     color: white;
 }
 
-body > * {
+#body > * {
     text-align: center;
 }
 
-p{
+#body p{
     font-size: 4em;
     font-family: 'Oswald', sans-serif;
     width:500px;
@@ -18,8 +18,15 @@ p{
     border-width: 5px;
 }
 
-input, option, select {
+#body input, option, select {
     margin-top: 1em;
-    height:1.5em;
-    font-size:14pt;
+    height:15px;
+    font-size:10pt;
+}
+
+input#signUp {
+    height: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
 }
