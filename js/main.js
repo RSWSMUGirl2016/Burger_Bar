@@ -382,7 +382,7 @@ function getPreviousOrder(){
             //put the quantity on the order paper
         }
     }
-}
+};
 
 
 function retrieveOrder() //get
@@ -417,7 +417,7 @@ Request.onreadystatechange = function () {
 };
 
 Request.send(JSON.stringify(body));
-}
+};
 
 function makeASammich() //post
 {
@@ -473,9 +473,9 @@ Request.send(JSON.stringify(body));
 function addToSammich() //patch
 {
  //TODO: implement this later or something
-}
+};
 
 function changeTheSammich() //put
 {
   //TODO: replace the order with a different order. NOT delete
-}
+};
