@@ -107,13 +107,13 @@
          	<td>
         		<div id = "toppings" class="menuOption" align="left">
         		</div>
-        		<button class="flourishButton" onclick="addTopping();">Add Topping</button>
+        		<button class="blackButton" onclick="addTopping();">Add Topping</button>
         	</td>
             <td>
         		<div id = "sauces" class="menuOption" align="left">
         		
         		</div>
-        		<button class="flourishButton" onclick="addSauce();">Add Sauce</button>
+        		<button class="blackButton" onclick="addSauce();">Add Sauce</button>
         	</td>
         </tr>
         </table>
@@ -155,7 +155,9 @@
                 
                 
                 </div>
-                 <button onclick="resetOrder()">Clear Order</button>
+                <div id="clearOrderDiv">
+                 <button class="blackButton" id="clearOrder" onclick="resetOrder()">Clear Order</button>
+                </div>
                 <hr>
                 <h2 id = "subtotal"></h2>
                 <h2 id = "tax"></h2>

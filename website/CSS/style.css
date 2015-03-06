@@ -101,9 +101,14 @@ body{
 
 .menuOption {	
 	font-size:15px;
-	width: 120px;
+	width: 150px;
+    text-align: center;
 }
 
+td {
+    text-align: center;
+    padding-left: 5.75%;
+}
 
 .menu {
 	background: white;
@@ -125,7 +130,7 @@ body{
 	padding:8px;
 }
 
-.flourishButton {
+.blackButton {
     background-color: black;
     color: white;
     border: none;
@@ -136,7 +141,18 @@ body{
     font-weight: bold;
 }
 
+#clearOrder{
+    width: 50%;
+    border: 1px solid red;
+    color: #FFCCCC;
+}
+
 #toppings, #sauces {
+    text-align: center;
+}
+
+#clearOrderDiv{
+    width: 100%;
     text-align: center;
 }
 
@@ -228,6 +244,7 @@ body{
 	-webkit-appearance: none;
 	border:none;
     text-align: center;
+    padding-bottom: 15px;
 }
 
 
