@@ -114,6 +114,32 @@ Request.onreadystatechange = function () {
 Request.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/getMenu', true);
 Request.send(JSON.stringify(document.body));
 
+
+
+
+
+
+console.log("GET USER");
+Request.onreadystatechange = function () {
+	console.log("THIS THING");
+  if (this.readyState === 4 && this.status === 200) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+    
+    var userInformation = JSON.parse(this.responseText);
+    populateUsers(userInformation);
+    
+  }
+}
+Request.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/verifyUser', true);
+  Tequest.send(JSON.stringify(document.body));
+  
+  
+
+
+
+
 function myFunction(arr) {
 	setPriceBase();
 
