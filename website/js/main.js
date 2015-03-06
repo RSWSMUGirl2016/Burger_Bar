@@ -110,7 +110,9 @@ function getSauce(sauce)
 function addTopping() {
 	var mydiv = document.getElementById("burgerToppings");
     var newcontent = document.createElement('div');
-    newcontent.innerHTML = "<p>"+tempTopping+"</p>";
+    if (typeof tempTopping != 'undefined') {
+        newcontent.innerHTML = "<p>"+tempTopping+"</p>";
+    }
 
     while (newcontent.firstChild) {
         mydiv.appendChild(newcontent.firstChild);
@@ -128,7 +130,9 @@ function addTopping() {
 function addSauce() {
 	var mydiv = document.getElementById("burgerSauces");
     var newcontent = document.createElement('div');
-    newcontent.innerHTML = "<p>"+tempSauce+"</p>";
+    if (typeof tempSauce != 'undefined') {
+        newcontent.innerHTML = "<p>"+tempSauce+"</p>";
+    }
 
     while (newcontent.firstChild) {
         mydiv.appendChild(newcontent.firstChild);
