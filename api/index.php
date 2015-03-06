@@ -230,6 +230,7 @@ $app->post('/loginUser', function () {
     $dummyJSON = array ('status'=>"Success", "user_id"=>1,"fName"=>"Austin","lName"=>"Wells","CCnum"=>1234,"CCprovider"=>"Visa");
     $email = $_POST['email'];
     $password = $_POST['password'];
+    //$passwordCheck = mysqli->query("SELECT password ")
     echo json_encode($dummyJSON);
 });
 
