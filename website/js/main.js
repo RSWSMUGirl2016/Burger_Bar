@@ -118,9 +118,9 @@ Request.send(JSON.stringify(document.body));
 
 
 
-
+var Request2 = new XMLHttpRequest();
 console.log("GET USER");
-Request.onreadystatechange = function () {
+Request2.onreadystatechange = function () {
 	console.log("THIS THING");
   if (this.readyState === 4 && this.status === 200) {
     console.log('Status:', this.status);
@@ -132,8 +132,8 @@ Request.onreadystatechange = function () {
     
   }
 }
-Request.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/verifyUser', true);
-  Tequest.send(JSON.stringify(document.body));
+Request2.open('GET', 'http://private-c05a97-burgers1.apiary-mock.com/verifyUser', true);
+  Request2.send(JSON.stringify(document.body));
   
   
 
