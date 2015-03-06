@@ -13,6 +13,8 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/Registration.js"></script>
         <script type="text/javascript" src="js/login.js"></script>    
+        <script type="text/javascript" src="js/menu.js"></script>    
+        
     </head>
     
     
@@ -121,45 +123,74 @@
         	   </div>
             </div>
         </div>    
-        
+
+					<!-- VIEWING ORDER PROGRESS -->
         <div id = "OrderList">
-        <h2>Orders</h2>
-        <button onclick="resetOrder()">Clear Order</button>
+        <h2>Orders</h2> 
         <hr>
+       
             <div id = "addedOrders"></div>
+             <div id="containTheOrder">
+            	Meat <button onclick="clearItems('burgerMeat', 1)">X</button>
+            	<hr>
                 <h4 id = "burgerMeat"></h4>
+                Bun <button onclick="clearItems('burgerBun', 2)">X</button>
+                <hr>
                 <h4 id = "burgerBun"></h4>
+                Cheese <button onclick="clearItems('burgerCheese', 3)">X</button>
+                <hr>
                 <h4 id = "burgerCheese"></h4>
+                Toppings <button onclick="clearItems('burgerToppings', 4)">X</button>
+                <hr>
                 <h4 id = "burgerToppings"></h4>
+                Sauces <button onclick="clearItems('burgerSauces', 5)">X</button>
+                <hr>
                 <h4 id = "burgerSauces"></h4>
+                Side <button onclick="clearItems('burgerSide', 6)">X</button>
+                <hr>
                 <h4 id = "burgerSide"></h4>
+                
+                
+                </div>
+                 <button onclick="resetOrder()">Clear Order</button>
                 <hr>
                 <h2 id = "subtotal"></h2>
                 <h2 id = "tax"></h2>
                 <h3 id = "totalPrice"></h3>
                 <div id="button_div"> 
-                    <a href="#orderPayment" id="payNowButton" class="pay_button">PayNow</a> 
+                    <a href="#orderPayment" id="payNowButton" class="pay_button">Review Order</a> 
                     <button class="button" id="orderPrevious" type="button">Order Previous</button>
                 </div> 
+       
         </div>
         
-        
+ <!-- REVIEWING FINAL ORDER-->     
         <div id="orderPayment"> 
-            <a href="#" class="cancel">&times;</a> 
-            <form class="userForm" method="POST" onsubmit="return placeOrder()">
-                <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
-                <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
-                <input class="userInput" type="email" name="email"  placeholder="Email"><br>
-                <input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
-                <select class="userInput" name = "ccprovider">
-                    <option selected="selected" id="defaultProvider">Credit Card</option>
-                    <option value="Mastercard">Master Card</option>
-                    <option value="American Express">American Express</option>
-                    <option value="Visa">Visa</option>
-                </select><br>
-                <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
-                <input class="userInput" type="submit" value="Order">
-            </form>
+            <a href="#" id="exitOrderPayment" class="cancel">&times;</a>
+            <div id="reviewOrderContent">
+
+            <h2>Review Order</h2>
+            <hr>
+            
+           
+            <div id="orderContent">
+            <h5 id="reviewMeat">TEST TEXT</h5>
+            <h5 id="reviewBun"></h5>
+            <h5 id="reviewCheese"></h5>
+            <h5 id="reviewToppings"></h5>
+            <h5 id="reviewSauces"></h5>
+            <h5 id="reviewSide"></h5>
+            
+            </div>
+            <hr>
+            <h5 id="reviewSubtotal"></h5>
+            <h5 id="reviewTax"></h5>
+            <h5 id="reviewTotalPrice"></h5>
+          <button class="button" id="confirmOrder" type="submit">Confirm Order</button>
+            
+           </div>
+           
+           
         </div> 
 
         
