@@ -61,7 +61,31 @@ function Sides(name, price){
     this.name = name;
 }
 
+function reviewOrder() { 
+    console.log("review order function");
 
+    document.getElementById("reviewMeat").innerHTML = document.getElementById("burgerMeat").innerHTML;
+    document.getElementById("reviewBun").innerHTML = document.getElementById("burgerBun").innerHTML;
+    document.getElementById("reviewCheese").innerHTML = document.getElementById("burgerCheese").innerHTML;
+    document.getElementById("reviewToppings").innerHTML = document.getElementById("burgerToppings").innerHTML;
+    document.getElementById("reviewSauces").innerHTML = document.getElementById("burgerSauces").innerHTML;
+    document.getElementById("reviewSide").innerHTML = document.getElementById("burgerSide").innerHTML;
+    document.getElementById("reviewSubtotal").innerHTML = document.getElementById("subtotal").innerHTML;
+    document.getElementById("reviewTax").innerHTML = document.getElementById("tax").innerHTML;
+    document.getElementById("reviewTotalPrice").innerHTML = document.getElementById("totalPrice").innerHTML;
+    
+    //console.log(document.getElementById("burgerMeat").innerHTML);
+}
+
+$('#payNowButton').click( function() { 
+    reviewOrder(); 
+    $('#orderPayment').fadeIn("slow");
+    return false; 
+});
+
+$('#exitOrderPayment').click( function() {
+    $('#orderPayment').fadeOut("slow");
+});
 
 /*GETTING THE VALUES FROM THE FORM */
     
@@ -222,20 +246,12 @@ function myFunction(arr) {
 
 
 function resetOrder() {
-
-
-		document.getElementById("burgerMeat").innerHTML = "";
-		document.getElementById("burgerBun").innerHTML = "";
-		document.getElementById("burgerCheese").innerHTML = "";
-		document.getElementById("burgerToppings").innerHTML = "";
-		document.getElementById("burgerSide").innerHTML = "";
-		document.getElementById("burgerSauces").innerHTML = "";
-		
-	
-	
-
-
-
+	document.getElementById("burgerMeat").innerHTML = "";
+	document.getElementById("burgerBun").innerHTML = "";
+	document.getElementById("burgerCheese").innerHTML = "";
+	document.getElementById("burgerToppings").innerHTML = "";
+	document.getElementById("burgerSide").innerHTML = "";
+	document.getElementById("burgerSauces").innerHTML = "";
 }
 
 function placeOrder() {
