@@ -134,16 +134,29 @@ body{
     z-index:5; width:100%;
     height:100%; display:none;
 } 
-#loginScreen { 
+#orderPayment { 
     height:380px;
     width:340px;
     margin:0 auto;
     position:relative;
-    z-index:10; display:none;
+    z-index:10; 
+    display:none;
     background-color: rgba(255,255,255,0.9);
-    /*border:5px solid #cccccc;*/
+    border:5px solid #cccccc;
 }
-#loginScreen:target, #loginScreen:target + #cover{ 
+
+#confirmation { 
+    height:380px;
+    width:340px;
+    margin:0 auto;
+    position:relative;
+    z-index:10; 
+    display:none;
+    background-color: rgba(255,255,255,0.9);
+    border:5px solid #cccccc;
+}
+
+#orderPayment:target, #orderPayment:target + #cover{ 
     display:block;
      opacity:2;
 } 

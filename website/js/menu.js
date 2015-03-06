@@ -27,7 +27,11 @@ $(document).ready(function() {
 			burger['toppings'].push($(this).val());
 		});
 
+		addToOrderDisplay(burger);
 		return burger;  
 	});
 });
 
+function addToOrderDisplay(burger) {
+	$('#burgerMeat').text(burger['type']);
+}
