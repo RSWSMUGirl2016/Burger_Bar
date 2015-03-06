@@ -135,6 +135,16 @@ body{
     text-align: center;
 }
 
+#cover{
+    position:relative;
+    top:0;
+    left:0;
+    background:white;
+    z-index:15; width:90%;
+    height:90%;
+
+}
+
 #orderPayment { 
     height:380px;
     width:340px;

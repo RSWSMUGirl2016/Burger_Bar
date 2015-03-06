@@ -64,6 +64,10 @@ function Sides(name, price){
 function reviewOrder() { 
     console.log("review order function");
 
+    var temp = document.getElementById("burgerMeat").innerHTML;
+    console.log(temp);
+
+    document.getElementById("reviewMeat").innerHTML = temp;
     document.getElementById("reviewMeat").innerHTML = document.getElementById("burgerMeat").innerHTML;
     document.getElementById("reviewBun").innerHTML = document.getElementById("burgerBun").innerHTML;
     document.getElementById("reviewCheese").innerHTML = document.getElementById("burgerCheese").innerHTML;
@@ -77,12 +81,14 @@ function reviewOrder() {
     //console.log(document.getElementById("burgerMeat").innerHTML);
 }
 
+// on review order click, populate the pop up with the order and fade in
 $('#payNowButton').click( function() { 
     reviewOrder(); 
     $('#orderPayment').fadeIn("slow");
     return false; 
 });
 
+// on exit click, fade out
 $('#exitOrderPayment').click( function() {
     $('#orderPayment').fadeOut("slow");
 });
