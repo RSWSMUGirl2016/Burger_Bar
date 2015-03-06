@@ -145,18 +145,8 @@ body{
     border:5px solid #cccccc;
 }
 
-#confirmation { 
-    height:380px;
-    width:340px;
-    margin:0 auto;
-    position:relative;
-    z-index:10; 
-    display:none;
-    background-color: rgba(255,255,255,0.9);
-    border:5px solid #cccccc;
-}
 
-#orderPayment:target, #orderPayment:target + #cover{ 
+#orderPayment:target, #orderPayment:target { 
     display:block;
      opacity:2;
 } 
