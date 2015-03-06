@@ -140,28 +140,36 @@
                 <h2 id = "tax"></h2>
                 <h3 id = "totalPrice"></h3>
                 <div id="button_div"> 
-                    <a href="#orderPayment" id="payNowButton" class="pay_button">PayNow</a> 
+                    <a href="#orderPayment" id="payNowButton" class="pay_button">Review Order</a> 
                     <button class="button" id="orderPrevious" type="button">Order Previous</button>
                 </div> 
         </div>
         
         
         <div id="orderPayment"> 
-            <a href="#" class="cancel">&times;</a> 
+            <a href="#" id="exitOrderPayment" class="cancel">&times;</a> 
+            <h2>Review Order</h2>
+            <hr>
+            <h5 id="reviewMeat">TEST TEXT</h5>
+            <h5 id="reviewBun"></h5>
+            <h5 id="reviewCheese"></h5>
+            <h5 id="reviewToppings"></h5>
+            <h5 id="reviewSauces"></h5>
+            <h5 id="reviewSide"></h5>
+            <hr>
+            <h5 id="reviewSubtotal"></h5>
+            <h5 id="reviewTax"></h5>
+            <h5 id="reviewTotalPrice"></h5>
+            <button class="button" id="confirmOrder" type="submit">Confirm Order</button>
+            <!--
             <form class="userForm" method="POST" onsubmit="return placeOrder()">
                 <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
                 <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
                 <input class="userInput" type="email" name="email"  placeholder="Email"><br>
                 <input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
-                <select class="userInput" name = "ccprovider">
-                    <option selected="selected" id="defaultProvider">Credit Card</option>
-                    <option value="Mastercard">Master Card</option>
-                    <option value="American Express">American Express</option>
-                    <option value="Visa">Visa</option>
-                </select><br>
-                <input class="userInput" type="text" name="ccnumber"  placeholder="Credit Card Number"><br>
                 <input class="userInput" type="submit" value="Order">
             </form>
+            -->
         </div> 
 
         
