@@ -51,7 +51,9 @@ body{
 }
 
 #signedIn{
-    display: none;
+    color:white;
+    font-size:30px;
+    display:none;
 }
 
 #MenuItems{

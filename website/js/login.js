@@ -62,6 +62,7 @@ function userTriesToLogin() {
 	userName = document.getElementById("signInEmail").value;
 	userPass = document.getElementById("signInPass").value;
 	verification(userName, userPass);
+	respondToLogin();
 
 }
 
@@ -86,15 +87,29 @@ function verification(userName, password) {
 	for(var i = 0; i < userList.length; i++) {
 		checkName = userList[i].name;
 		checkPassword = userList[i].password;
-
+	console.log(checkName);
+	console.log(checkPassword);
 		
 		if(checkName == userName && checkPassword == password){
 			console.log("CORRECT USER");
+			registered="TRUE";
 			return;
 		}	
-	
+	}
+}
+
+
+function respondToLogin(){
+	console.log("RESPONDING");
+	if(registered == "TRUE") {
+		document.getElementById("signedIn").style.display='block';
+		console.log("correct user");
 	}
 	
+	if(registered == "FALSE") {
+		document.getElementById("signedIn").style.display='none';
+		console.log("bad user");
+	}
 
 }
 
