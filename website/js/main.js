@@ -24,6 +24,8 @@ var sidePrices = new Array();
 var tempTopping;
 var tempSauce;
 
+var registered = "FALSE";
+
 
 var totalPrices = new Array();
 
