@@ -17,6 +17,10 @@ $app->get('/getMeats', function () {
 			"price": 2
 		},
 		{
+			"name": "Chicken",
+			"price": 2
+		},
+		{
 			"name": "1/2 lb. Beef",
 			"price": 2.25
 		},
@@ -49,6 +53,10 @@ $app->get('/getBuns', function () {
 		"price": 0.50
 	},
 	{
+		"name": "Lettuce Wrap",
+		"price": 0.75
+	},
+	{
 		"name": "Texas Toast",
 		"price": 0.75
 	}
@@ -67,7 +75,19 @@ $app->get('/getCheeses', function () {
 		"price": 0.35
 	},
 	{
+		"name": "Provolone",
+		"price": 0.35
+	},
+	{
+		"name": "Parmesan",
+		"price": 0.35
+	},
+	{
 		"name": "Swiss",
+		"price": 0.35
+	},
+	{
+		"name": "Pepper Jack",
 		"price": 0.35
 	}
 	] }';
