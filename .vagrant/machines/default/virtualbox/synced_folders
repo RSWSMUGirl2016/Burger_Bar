@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www":{"guestpath":"/var/www","hostpath":"/home/avery/Documents/School/Burger_Bar/website","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/avery/Documents/School/Burger_Bar","disabled":false}}}

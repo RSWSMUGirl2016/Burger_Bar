@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`BurgerComponent` (
   `idBurgerComponent` INT NOT NULL AUTO_INCREMENT,
   `componentName` VARCHAR(45) NULL,
   `componentType` INT NULL,
+  `componentPrice` FLOAT(4) NOT NULL DEFAULT 0.00,
   PRIMARY KEY (`idBurgerComponent`))
 ENGINE = InnoDB;
 
